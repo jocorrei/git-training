@@ -1,30 +1,30 @@
 # Git & GitHub Masterclass
 
-A practical 1-hour introduction to Git and GitHub for developers who want to work like a pro.
+A practical 1-hour hands-on introduction to Git and GitHub for developers who want to work like a pro.
 
 ## Agenda
 
 | # | Topic | Duration |
 |---|---|---|
-| 1 | [Git vs GitHub](.guide/01-git-vs-github.md) | 5 min |
-| 2 | [Creating a Repository](.guide/02-creating-a-repo.md) | 5 min |
-| 3 | [Local Workflow](.guide/03-local-workflow.md) | 15 min |
+| 1 | [Setup](.guide/01-setup.md) | 5 min |
+| 2 | [Clone the Repository](.guide/02-clone.md) | 5 min |
+| 3 | [Your First Push](.guide/03-first-push.md) | 15 min |
 | 4 | [Branching](.guide/04-branching.md) | 15 min |
-| 5 | [Pull Requests](.guide/05-pull-requests.md) | 15 min |
-| 6 | [Pro Tips](.guide/06-pro-tips.md) | 5 min |
+| 5 | [Conflicts](.guide/05-conflicts.md) | 15 min |
+| 6 | [Pull Request](.guide/06-pull-request.md) | 5 min |
 
 ## Prerequisites
 
 - A [GitHub](https://github.com) account
-- [Git](https://git-scm.com/downloads) installed on your computer
-- A terminal (Terminal on Mac, Git Bash on Windows)
-- Any text editor (VS Code recommended)
+- macOS with Terminal
+- Any text editor (VS Code or Cursor recommended)
 
 ## What you'll be able to do after this session
 
-- Understand what Git and GitHub are and why they exist
-- Create and manage repositories
-- Track and commit changes to your files
-- Work safely with branches without breaking anything
-- Open and merge Pull Requests like a real developer
-- Know the most useful tricks to work efficiently
+- Install and configure Git and the GitHub CLI
+- Clone a repository and understand the local/remote relationship
+- Stage, commit, and push changes
+- Understand why pushing directly to main is blocked — and what to do instead
+- Create branches and push them to GitHub
+- Experience, understand, and resolve a merge conflict
+- Open a Pull Request and get it reviewed and merged
