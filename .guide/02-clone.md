@@ -15,10 +15,8 @@ The repo you're about to clone is the one used for this masterclass. It's a priv
 Run this command:
 
 ```bash
-gh repo clone YOUR-INSTRUCTOR/git-masterclass
+gh repo clone jocorrei/git-training
 ```
-
-Replace `YOUR-INSTRUCTOR` with the GitHub username your instructor gives you.
 
 The `gh repo clone` command does two things at once: it clones the repo *and* sets up the GitHub connection automatically, so you don't have to configure anything manually.
 
