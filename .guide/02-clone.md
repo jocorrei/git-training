@@ -33,7 +33,7 @@ remote: Counting objects: 100% (12/12), done.
 ## Navigate into the folder
 
 ```bash
-cd git-masterclass
+cd git-training
 ```
 
 You're now inside the project. List the files:
