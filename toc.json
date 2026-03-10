@@ -1,0 +1,110 @@
+[
+	{
+		"label": "Git vs GitHub",
+		"description": "Understanding the difference between Git and GitHub and why they exist.",
+		"markdown": ".guide/01-git-vs-github.md",
+		"actions": []
+	},
+	{
+		"label": "Creating a Repository",
+		"description": "Creating your first repository on GitHub and cloning it to your computer.",
+		"markdown": ".guide/02-creating-a-repo.md",
+		"actions": [
+			{
+				"label": "Open GitHub",
+				"action": "browser",
+				"target": "https://github.com/new"
+			}
+		]
+	},
+	{
+		"label": "Local Workflow",
+		"description": "The core Git loop: make a change, stage it, commit it, push it.",
+		"markdown": ".guide/03-local-workflow.md",
+		"actions": [
+			{
+				"label": "Check Git version",
+				"target": "git --version"
+			},
+			{
+				"label": "Check status",
+				"target": "git status"
+			},
+			{
+				"label": "Stage all changes",
+				"target": "git add ."
+			},
+			{
+				"label": "Push to GitHub",
+				"target": "git push"
+			},
+			{
+				"label": "View commit history",
+				"target": "git log --oneline"
+			}
+		]
+	},
+	{
+		"label": "Branching",
+		"description": "Working safely in parallel without touching the main branch.",
+		"markdown": ".guide/04-branching.md",
+		"actions": [
+			{
+				"label": "List branches",
+				"target": "git branch"
+			},
+			{
+				"label": "Create and switch to new branch",
+				"target": "git checkout -b my-new-branch"
+			},
+			{
+				"label": "Switch to main",
+				"target": "git checkout main"
+			},
+			{
+				"label": "Push branch to GitHub",
+				"target": "git push -u origin HEAD"
+			}
+		]
+	},
+	{
+		"label": "Pull Requests",
+		"description": "Proposing and reviewing changes before merging them into main.",
+		"markdown": ".guide/05-pull-requests.md",
+		"actions": [
+			{
+				"label": "Open GitHub",
+				"action": "browser",
+				"target": "https://github.com"
+			},
+			{
+				"label": "Pull latest changes",
+				"target": "git pull"
+			}
+		]
+	},
+	{
+		"label": "Pro Tips",
+		"description": "Useful tricks and shortcuts to work like a pro.",
+		"markdown": ".guide/06-pro-tips.md",
+		"actions": [
+			{
+				"label": "Check status",
+				"target": "git status"
+			},
+			{
+				"label": "Stash changes",
+				"target": "git stash"
+			},
+			{
+				"label": "Restore stashed changes",
+				"target": "git stash pop"
+			},
+			{
+				"label": "Open GitHub Desktop",
+				"action": "browser",
+				"target": "https://desktop.github.com"
+			}
+		]
+	}
+]
