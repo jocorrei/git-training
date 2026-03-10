@@ -29,7 +29,7 @@
 		"actions": [
 			{
 				"label": "Clone the repo",
-				"target": "gh repo clone YOUR-INSTRUCTOR/git-masterclass"
+				"target": "gh repo clone jocorrei/git-training"
 			},
 			{
 				"label": "Check status",
