@@ -1,109 +1,137 @@
 [
 	{
-		"label": "Git vs GitHub",
-		"description": "Understanding the difference between Git and GitHub and why they exist.",
-		"markdown": ".guide/01-git-vs-github.md",
-		"actions": []
-	},
-	{
-		"label": "Creating a Repository",
-		"description": "Creating your first repository on GitHub and cloning it to your computer.",
-		"markdown": ".guide/02-creating-a-repo.md",
-		"actions": [
-			{
-				"label": "Open GitHub",
-				"action": "browser",
-				"target": "https://github.com/new"
-			}
-		]
-	},
-	{
-		"label": "Local Workflow",
-		"description": "The core Git loop: make a change, stage it, commit it, push it.",
-		"markdown": ".guide/03-local-workflow.md",
+		"label": "Setup",
+		"description": "Install Git, the GitHub CLI, and authenticate with your GitHub account.",
+		"markdown": ".guide/01-setup.md",
 		"actions": [
 			{
 				"label": "Check Git version",
 				"target": "git --version"
 			},
 			{
+				"label": "Install GitHub CLI",
+				"target": "brew install gh"
+			},
+			{
+				"label": "Authenticate with GitHub",
+				"target": "gh auth login"
+			},
+			{
+				"label": "Confirm authentication",
+				"target": "gh auth status"
+			}
+		]
+	},
+	{
+		"label": "Clone the Repository",
+		"description": "Download the course repository to your computer using the GitHub CLI.",
+		"markdown": ".guide/02-clone.md",
+		"actions": [
+			{
+				"label": "Clone the repo",
+				"target": "gh repo clone YOUR-INSTRUCTOR/git-masterclass"
+			},
+			{
 				"label": "Check status",
 				"target": "git status"
 			},
 			{
-				"label": "Stage all changes",
-				"target": "git add ."
+				"label": "Check current branch",
+				"target": "git branch"
+			}
+		]
+	},
+	{
+		"label": "Your First Push",
+		"description": "Make your first change, commit it, and discover why pushing to main is blocked.",
+		"markdown": ".guide/03-first-push.md",
+		"actions": [
+			{
+				"label": "Open CHANGE_ME.md",
+				"action": "file",
+				"target": "CHANGE_ME.md"
 			},
 			{
-				"label": "Push to GitHub",
+				"label": "Stage changes",
+				"target": "git add CHANGE_ME.md"
+			},
+			{
+				"label": "Commit",
+				"target": "git commit -m \"Add my details to CHANGE_ME.md\""
+			},
+			{
+				"label": "Push (will fail)",
 				"target": "git push"
-			},
-			{
-				"label": "View commit history",
-				"target": "git log --oneline"
 			}
 		]
 	},
 	{
 		"label": "Branching",
-		"description": "Working safely in parallel without touching the main branch.",
+		"description": "Create your own branch and push your changes successfully.",
 		"markdown": ".guide/04-branching.md",
 		"actions": [
 			{
-				"label": "List branches",
-				"target": "git branch"
+				"label": "Create dev branch",
+				"target": "git checkout -b dev"
 			},
 			{
-				"label": "Create and switch to new branch",
-				"target": "git checkout -b my-new-branch"
+				"label": "Push branch to GitHub",
+				"target": "git push -u origin dev"
+			},
+			{
+				"label": "Confirm branches",
+				"target": "git branch"
+			}
+		]
+	},
+	{
+		"label": "Conflicts",
+		"description": "Experience a merge conflict, understand what caused it, and resolve it.",
+		"markdown": ".guide/05-conflicts.md",
+		"actions": [
+			{
+				"label": "Open CHANGE_ME.md",
+				"action": "file",
+				"target": "CHANGE_ME.md"
+			},
+			{
+				"label": "Stage and commit",
+				"target": "git add CHANGE_ME.md && git commit -m \"Add favourite tool\""
+			},
+			{
+				"label": "Push (will fail)",
+				"target": "git push"
+			},
+			{
+				"label": "Pull remote changes",
+				"target": "git pull"
+			},
+			{
+				"label": "Push resolved conflict",
+				"target": "git push"
+			}
+		]
+	},
+	{
+		"label": "Pull Request",
+		"description": "Open a PR from dev to main, get it reviewed, and merge it.",
+		"markdown": ".guide/06-pull-request.md",
+		"actions": [
+			{
+				"label": "Create PR",
+				"target": "gh pr create"
+			},
+			{
+				"label": "View PR status",
+				"target": "gh pr status"
 			},
 			{
 				"label": "Switch to main",
 				"target": "git checkout main"
 			},
 			{
-				"label": "Push branch to GitHub",
-				"target": "git push -u origin HEAD"
-			}
-		]
-	},
-	{
-		"label": "Pull Requests",
-		"description": "Proposing and reviewing changes before merging them into main.",
-		"markdown": ".guide/05-pull-requests.md",
-		"actions": [
-			{
-				"label": "Open GitHub",
-				"action": "browser",
-				"target": "https://github.com"
-			},
-			{
-				"label": "Pull latest changes",
+				"label": "Pull latest main",
 				"target": "git pull"
-			}
-		]
-	},
-	{
-		"label": "Pro Tips",
-		"description": "Useful tricks and shortcuts to work like a pro.",
-		"markdown": ".guide/06-pro-tips.md",
-		"actions": [
-			{
-				"label": "Check status",
-				"target": "git status"
-			},
-			{
-				"label": "Stash changes",
-				"target": "git stash"
-			},
-			{
-				"label": "Restore stashed changes",
-				"target": "git stash pop"
-			},
-			{
-				"label": "Open GitHub Desktop",
-				"action": "browser",
-				"target": "https://desktop.github.com"
 			}
 		]
 	}

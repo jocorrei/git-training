@@ -1,152 +1,67 @@
-# Branching
+# Branching — Working Without Breaking Things
 
-## The problem branching solves
-
-Have you ever saved a file like this?
-
-```
-landing-page.html
-landing-page-v2.html
-landing-page-v2-FINAL.html
-landing-page-v2-FINAL-client-edits.html
-landing-page-v2-FINAL-client-edits-2.html
-```
-
-That's you manually creating branches. Git does this cleanly, without duplicating files.
-
-A **branch** is a parallel version of your project. You experiment on the branch. If it works, you merge it back. If it doesn't, you throw it away. The original is never touched.
+A **branch** is your own safe copy of the project where you can make changes freely without affecting anyone else. When your work is ready, you merge it back.
 
 ---
 
-## The main branch
-
-Every repo starts with one branch called `main`. This is your production code — the version that's live, working, and stable. The rule is simple: **never work directly on main**.
-
-Always create a new branch for every change you make.
-
----
-
-## Step 1 — Create and switch to a branch
+## Create a dev branch
 
 ```bash
-git checkout -b add-contact-section
+git checkout -b dev
 ```
 
-This creates a new branch called `add-contact-section` and switches to it immediately.
+Output:
 
-Check which branch you're on:
+```
+Switched to a new branch 'dev'
+```
+
+You're now on the `dev` branch. Your commit from the previous section came with you — it's already here.
+
+Confirm:
 
 ```bash
 git branch
 ```
 
-The branch with `*` is your current one.
-
----
-
-## Step 2 — Make changes on the branch
-
-Edit `README.md` and add:
-
 ```
-## Contact
-
-Email us at hello@example.com
-```
-
-Stage and commit:
-
-```bash
-git add .
-git commit -m "Add contact section to README"
+* dev
+  main
 ```
 
 ---
 
-## Step 3 — See that main is untouched
-
-Switch back to main:
+## Push to GitHub
 
 ```bash
-git checkout main
+git push -u origin dev
 ```
 
-Open `README.md`. Your contact section is gone — because it only exists on your branch. Main is exactly as you left it.
+The `-u origin dev` part tells Git: *"push this branch to GitHub and remember this connection for future pushes"*. You only need `-u origin dev` the first time. After that, just `git push` is enough.
 
-Switch back to your branch:
+Output:
 
-```bash
-git checkout add-contact-section
 ```
-
-The contact section is back.
-
----
-
-## Step 4 — Merge the branch into main
-
-Once you're happy with the changes, merge them:
-
-```bash
-git checkout main
-git merge add-contact-section
-```
-
-Now main has your contact section. The branch did its job.
-
----
-
-## Step 5 — Push the branch to GitHub
-
-Before merging locally, in a real team workflow you'd push the branch to GitHub first and create a Pull Request (next section). Let's practice pushing a branch:
-
-```bash
-git checkout -b update-readme-title
-```
-
-Make a small change, commit it, then push:
-
-```bash
-git push -u origin update-readme-title
-```
-
-The `-u origin` part is only needed the first time you push a new branch. After that, `git push` is enough.
-
----
-
-## Branch naming conventions
-
-Good branch names describe what the branch does:
-
-| Pattern | Example |
-|---|---|
-| `feature/` | `feature/add-cookie-banner` |
-| `fix/` | `fix/broken-image-link` |
-| `update/` | `update/hero-copy` |
-
-Avoid names like `my-branch`, `test`, or `stuff`.
-
----
-
-## Commands cheat sheet
-
-```bash
-git checkout -b <name>     # Create and switch to new branch
-git checkout <name>        # Switch to existing branch
-git branch                 # List all branches
-git merge <name>           # Merge branch into current branch
-git push -u origin <name>  # Push new branch to GitHub
-git branch -d <name>       # Delete branch after merging
+ * [new branch]      dev -> dev
+Branch 'dev' set up to track remote branch 'dev' from 'origin'.
 ```
 
 ---
 
-## Visual summary
+## Confirm on GitHub
+
+Go to the repo on GitHub (your instructor will share the URL). Click the branch dropdown — you'll see `dev` listed alongside `main`. Your change is live on GitHub, safely isolated from `main`.
+
+---
+
+## Why branches matter
+
+Think of `main` as the published version of a website. You never edit it directly — you work on a draft (your branch), get it reviewed, and only then publish it.
+
+Every change you make from now on follows this pattern:
 
 ```
-main:     A ── B ── C ──────────── F (merge)
-                      \          /
-feature:               D ── E ──
+Create branch → Make changes → Push branch → Open PR → Get reviewed → Merge to main
 ```
 
-Your changes (D, E) happen in isolation. Main stays at C until you're ready to merge.
+In the next section, you'll see what happens when two people make conflicting changes on the same branch at the same time.
