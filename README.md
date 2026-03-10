@@ -12,6 +12,7 @@ A practical 1-hour hands-on introduction to Git and GitHub for developers who wa
 | 4 | [Branching](.guide/04-branching.md) | 15 min |
 | 5 | [Conflicts](.guide/05-conflicts.md) | 15 min |
 | 6 | [Pull Request](.guide/06-pull-request.md) | 5 min |
+| 7 | [Wrap Up](.guide/07-wrap-up.md) | 5 min |
 
 ## Prerequisites
 
@@ -28,3 +29,4 @@ A practical 1-hour hands-on introduction to Git and GitHub for developers who wa
 - Create branches and push them to GitHub
 - Experience, understand, and resolve a merge conflict
 - Open a Pull Request and get it reviewed and merged
+- Understand why `.env` files must never be committed and how `.gitignore` protects you
