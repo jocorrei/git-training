@@ -134,5 +134,34 @@
 				"target": "git pull"
 			}
 		]
+	},
+	{
+		"label": "Wrap Up",
+		"description": "Never commit secrets, understand .gitignore, and review the full workflow.",
+		"markdown": ".guide/07-wrap-up.md",
+		"actions": [
+			{
+				"label": "Open .env.example",
+				"action": "file",
+				"target": ".env.example"
+			},
+			{
+				"label": "Open .gitignore",
+				"action": "file",
+				"target": ".gitignore"
+			},
+			{
+				"label": "Create .env from example",
+				"target": "cp .env.example .env"
+			},
+			{
+				"label": "Check .env is ignored",
+				"target": "git check-ignore -v .env"
+			},
+			{
+				"label": "Confirm .env is not tracked",
+				"target": "git status"
+			}
+		]
 	}
 ]
