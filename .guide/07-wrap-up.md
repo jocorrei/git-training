@@ -68,11 +68,13 @@ Git tells you exactly which line in `.gitignore` is responsible for ignoring the
 
 ## The rule
 
-| File | Commit it? |
-|---|---|
+
+| File           | Commit it?                                  |
+| -------------- | ------------------------------------------- |
 | `.env.example` | ✅ Yes — it's a template with no real values |
-| `.env` | ❌ Never — it has real secrets |
-| `.gitignore` | ✅ Yes — it protects the whole team |
+| `.env`         | ❌ Never — it has real secrets               |
+| `.gitignore`   | ✅ Yes — it protects the whole team          |
+
 
 Always commit `.env.example` so teammates know which variables they need. Never commit `.env`.
 
@@ -115,6 +117,10 @@ gh pr create
 # 8. After your PR is merged, sync your local main
 git checkout main
 git pull
+
+# 9. Merge branches locally
+git merge {origin_branch}
+
 ```
 
 That's it. This is the workflow used by development teams at every company, every day.
@@ -123,15 +129,18 @@ That's it. This is the workflow used by development teams at every company, ever
 
 ## Quick reference card
 
-| Command | What it does |
-|---|---|
-| `git status` | What has changed? |
-| `git add .` | Stage all changes |
-| `git commit -m "..."` | Save a snapshot |
-| `git push` | Upload to GitHub |
-| `git pull` | Download latest changes |
+
+| Command                | What it does                      |
+| ---------------------- | --------------------------------- |
+| `git status`           | What has changed?                 |
+| `git add .`            | Stage all changes                 |
+| `git commit -m "..."`  | Save a snapshot                   |
+| `git push`             | Upload to GitHub                  |
+| `git pull`             | Download latest changes           |
 | `git checkout -b name` | Create and switch to a new branch |
-| `git branch` | List all branches |
-| `git log --oneline` | See commit history |
-| `gh pr create` | Open a Pull Request |
-| `gh auth status` | Check GitHub authentication |
+| `git branch`           | List all branches                 |
+| `git log --oneline`    | See commit history                |
+| `gh pr create`         | Open a Pull Request               |
+| `gh auth status`       | Check GitHub authentication       |
+
+
