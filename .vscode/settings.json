@@ -1,7 +1,6 @@
 {
   "workbench.editorAssociations": {
-    ".guide/*.md": "vscode.markdown.preview.editor",
-    "README.md": "vscode.markdown.preview.editor",
-    "CHANGE_ME.md": "workbench.editor.markdown"
+    "*.md": "vscode.markdown.preview.editor",
+    "CHANGE_ME.md": "default"
   }
 }
